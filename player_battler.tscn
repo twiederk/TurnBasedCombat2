@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctj78hsfhjquw"]
+[gd_scene load_steps=5 format=3 uid="uid://ctj78hsfhjquw"]
 
 [ext_resource type="Texture2D" uid="uid://byry4bbf81eo5" path="res://Battlers/World01_006_Witch.png" id="1_jjm3x"]
 [ext_resource type="Script" path="res://player_battler.gd" id="1_vpggk"]
 [ext_resource type="Resource" uid="uid://dscs3p50mdpmu" path="res://player_battler.tres" id="2_fun71"]
+[ext_resource type="Texture2D" uid="uid://d07ty4kagykf" path="res://cursor_pointer.png" id="4_uoadu"]
 
 [node name="PlayerBattler" type="Node2D" groups=["PlayerBattler"]]
 script = ExtResource("1_vpggk")
@@ -16,3 +17,8 @@ value = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_jjm3x")
+
+[node name="TurnIndicator" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-71, -1)
+texture = ExtResource("4_uoadu")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ov78bfqeia6n"]
+[gd_scene load_steps=5 format=3 uid="uid://ov78bfqeia6n"]
 
 [ext_resource type="Texture2D" uid="uid://bm2ebnn3tn7fe" path="res://Battlers/World01_001_GreenGoo.png" id="1_a4cis"]
 [ext_resource type="Script" path="res://enemy_battler.gd" id="1_qbna7"]
 [ext_resource type="Resource" uid="uid://b8lqinxbor3fp" path="res://enemy_battler.tres" id="2_jr0pw"]
+[ext_resource type="Texture2D" uid="uid://d07ty4kagykf" path="res://cursor_pointer.png" id="4_mxkx1"]
 
 [node name="EnemyBattler" type="Node2D" groups=["EnemyBattler"]]
 script = ExtResource("1_qbna7")
@@ -16,6 +17,11 @@ value = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_a4cis")
+
+[node name="TurnIndicator" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-61, -1)
+texture = ExtResource("4_mxkx1")
 
 [node name="SelectTargetButton" type="Button" parent="."]
 offset_left = -26.0
