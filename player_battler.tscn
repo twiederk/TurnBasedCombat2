@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctj78hsfhjquw"]
+[gd_scene load_steps=4 format=3 uid="uid://ctj78hsfhjquw"]
 
 [ext_resource type="Texture2D" uid="uid://byry4bbf81eo5" path="res://Battlers/World01_006_Witch.png" id="1_jjm3x"]
 [ext_resource type="Script" path="res://player_battler.gd" id="1_vpggk"]
+[ext_resource type="Resource" uid="uid://dscs3p50mdpmu" path="res://player_battler.tres" id="2_fun71"]
 
 [node name="PlayerBattler" type="Node2D" groups=["PlayerBattler"]]
 script = ExtResource("1_vpggk")
+stats_resource = ExtResource("2_fun71")
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_top = -100.0
