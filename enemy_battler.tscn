@@ -18,5 +18,8 @@ value = 50.0
 texture = ExtResource("1_a4cis")
 
 [node name="SelectTargetButton" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -26.0
+offset_top = 32.0
+offset_right = 28.0
+offset_bottom = 63.0
+text = "Select"

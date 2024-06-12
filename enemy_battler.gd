@@ -27,8 +27,15 @@ func _update_health_bar() -> void:
 
 
 func start_turn() -> void:
+	print("EnemyBattler.start_turn")
+	get_tree().create_timer(1).timeout
 	deal_damage.emit(_get_attack_damage())
 	
+
+func stop_turn() -> void:
+	print("EnemyBattler.stop_turn")
+	get_tree().create_timer(1).timeout
+
 	
 func show_select_button() -> void:
 	select_target_button.show()
@@ -47,6 +54,8 @@ func _get_attack_damage() -> int:
 
 
 func be_damaged(amount: int) -> void:
+	print("EnemyBattler.be_damaged")
+	get_tree().create_timer(1).timeout
 	current_hp -= amount
 	_update_health_bar()
 	if current_hp <= 0:

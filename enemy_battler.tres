@@ -8,4 +8,4 @@ type = 0
 max_hp = 300
 min_damage = 150
 max_damage = 200
-turn_speed = 50
+turn_speed = 100
