@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8h3i77hnhcfs"]
+[gd_scene load_steps=3 format=3 uid="uid://b8h3i77hnhcfs"]
 
-[ext_resource type="PackedScene" uid="uid://ctj78hsfhjquw" path="res://player_battler.tscn" id="1_7w4l0"]
 [ext_resource type="Script" path="res://battle_manager.gd" id="1_o00rt"]
 [ext_resource type="PackedScene" uid="uid://ov78bfqeia6n" path="res://enemy_battler.tscn" id="2_1clk8"]
 
@@ -11,15 +10,6 @@ script = ExtResource("1_o00rt")
 position = Vector2(573, 323)
 
 [node name="BG" type="Sprite2D" parent="."]
-
-[node name="PlayerBattler" parent="." instance=ExtResource("1_7w4l0")]
-position = Vector2(332, 113)
-
-[node name="PlayerBattler2" parent="." instance=ExtResource("1_7w4l0")]
-position = Vector2(195, 173)
-
-[node name="PlayerBattler3" parent="." instance=ExtResource("1_7w4l0")]
-position = Vector2(328, 260)
 
 [node name="EnemyBattler" parent="." instance=ExtResource("2_1clk8")]
 position = Vector2(726, 94)

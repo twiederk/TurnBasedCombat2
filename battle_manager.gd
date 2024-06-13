@@ -1,11 +1,7 @@
 class_name BattleManager
 extends Node
 
-@onready var turn_action_buttons = $CanvasLayer/TurnActionButtons
-@onready var skip_turn_button = $CanvasLayer/TurnActionButtons/SkipTurnButton
-@onready var attack_button = $CanvasLayer/TurnActionButtons/AttackButton
-@onready var battle_end_panel = $CanvasLayer/BattleEndPanel
-@onready var battle_end_text = $CanvasLayer/BattleEndPanel/BattleEndText
+const PlayerBattlerScene = preload("res://player_battler.tscn")
 
 var all_battlers = []
 var player_battlers = []
@@ -14,11 +10,35 @@ var enemy_battlers = []
 var current_turn: Node2D
 var current_turn_index: int
 
+@onready var turn_action_buttons = $CanvasLayer/TurnActionButtons
+@onready var skip_turn_button = $CanvasLayer/TurnActionButtons/SkipTurnButton
+@onready var attack_button = $CanvasLayer/TurnActionButtons/AttackButton
+@onready var battle_end_panel = $CanvasLayer/BattleEndPanel
+@onready var battle_end_text = $CanvasLayer/BattleEndPanel/BattleEndText
+
 func _ready():
 	turn_action_buttons.hide()
 	battle_end_panel.hide()
+
+	var player1 = PlayerBattlerScene.instantiate()
+	player1.stats_resource = create_battler_stats(400, 100, 200, 50)
+	player1.position = Vector2(100, 100)
+	add_child(player1)
+	player1.set_texture(load("res://Battlers/World01_007_Pirate.png"))
 	
-	player_battlers = get_tree().get_nodes_in_group("PlayerBattler")
+	var player2 = PlayerBattlerScene.instantiate()
+	player2.stats_resource = create_battler_stats(400, 100, 200, 50)
+	player2.position = Vector2(100, 300)
+	add_child(player2)
+	player2.set_texture(load("res://Battlers/World01_005_Shello.png"))
+	
+	var player3 = PlayerBattlerScene.instantiate()
+	player3.stats_resource = create_battler_stats(400, 100, 200, 50)
+	player3.position = Vector2(100, 500)
+	add_child(player3)
+	player3.set_texture(load("res://Battlers/World04_003_ Outlaw.png"))
+
+	player_battlers = get_tree().get_nodes_in_group("PlayerBattler")	
 	enemy_battlers = get_tree().get_nodes_in_group("EnemyBattler")
 	all_battlers.append_array(player_battlers)
 	all_battlers.append_array(enemy_battlers)
@@ -112,3 +132,13 @@ func _show_battle_end_panel(message: String) -> void:
 	battle_end_panel.show()
 	if turn_action_buttons.visible:
 		turn_action_buttons.hide()
+
+
+func create_battler_stats(max_hp: int, min_damage: int, max_damage: int, turn_speed: int) -> BattlerStats:
+	var battlerStats = BattlerStats.new()
+	battlerStats.type = BattlerStats.BattlerType.Player
+	battlerStats.max_hp = max_hp
+	battlerStats.min_damage = min_damage
+	battlerStats.max_damage = max_damage
+	battlerStats.turn_speed = turn_speed
+	return battlerStats
