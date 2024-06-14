@@ -1,23 +1,23 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8h3i77hnhcfs"]
 
-[ext_resource type="Script" path="res://battle_manager.gd" id="1_o00rt"]
-[ext_resource type="PackedScene" uid="uid://ov78bfqeia6n" path="res://enemy_battler.tscn" id="2_1clk8"]
+[ext_resource type="Script" path="res://battle_manager.gd" id="1_5ua2b"]
+[ext_resource type="PackedScene" uid="uid://ov78bfqeia6n" path="res://enemy_battler.tscn" id="2_e1i7m"]
 
-[node name="TurnBasedBattleDemo" type="Node"]
-script = ExtResource("1_o00rt")
+[node name="BattleManager" type="Node"]
+script = ExtResource("1_5ua2b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(573, 323)
 
 [node name="BG" type="Sprite2D" parent="."]
 
-[node name="EnemyBattler" parent="." instance=ExtResource("2_1clk8")]
+[node name="EnemyBattler" parent="." instance=ExtResource("2_e1i7m")]
 position = Vector2(726, 94)
 
-[node name="EnemyBattler2" parent="." instance=ExtResource("2_1clk8")]
+[node name="EnemyBattler2" parent="." instance=ExtResource("2_e1i7m")]
 position = Vector2(834, 164)
 
-[node name="EnemyBattler3" parent="." instance=ExtResource("2_1clk8")]
+[node name="EnemyBattler3" parent="." instance=ExtResource("2_e1i7m")]
 position = Vector2(783, 276)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
